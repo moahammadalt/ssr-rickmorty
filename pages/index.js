@@ -20,8 +20,8 @@ function Home({ data = {} }) {
 
   return (
     <div style={{ backgroundColor: 'aquamarine' }}>
-      <div style={{ textAlign: 'center', paddingTop: '20px' }}>
-        <h1>Server Side Rendering</h1>
+      <div style={{ textAlign: 'center', paddingTop: '15px' }}>
+        <h1 style={{ fontSize: '45px', backgroundColor: 'khaki', padding: '10px' }}>Server Side Rendering</h1>
         <Link href="/about">
           <h3>go to another page</h3>
         </Link>
@@ -32,7 +32,7 @@ function Home({ data = {} }) {
       >
         {charData.map(char => (
           <div key={char.id} style={{ margin: '25px' }}>
-            <h4>{char.name}</h4>
+            <h2>{char.name} - {char.species}</h2>
             <img src={char.image} />
           </div>
         ))}
