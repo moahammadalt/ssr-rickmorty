@@ -8,7 +8,6 @@ Home.getInitialProps = async () => {
 }
 
 function Home({ data = {} }) {
-  console.log('data: ', data);
   const [charData, setCharData] = useState(data || []);
 
   /* useEffect(() => {
