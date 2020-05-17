@@ -2,16 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { getCharacter } from 'rickmortyapi';
 import Link from 'next/link';
 
-function Home() {
-  const [charData, setCharData] = useState([]);
+Home.getInitialProps = async () => {
+  const char = await getCharacter();
+  return { data: char };
+}
 
-  useEffect(() => {
+function Home({ data = {} }) {
+  console.log('data: ', data);
+  const [charData, setCharData] = useState(data.results || []);
+
+  /* useEffect(() => {
     async function fetchData() {
       const char = await getCharacter();
       setCharData(char.results);
     }
     fetchData();
-  }, []);
+  }, []); */
 
   return (
     <div>
