@@ -8,7 +8,6 @@ Home.getInitialProps = async () => {
 }
 
 function Home({ data = {} }) {
-  console.log('data: ', data);
   const [charData, setCharData] = useState(data.results || []);
 
   /* useEffect(() => {
@@ -20,7 +19,7 @@ function Home({ data = {} }) {
   }, []); */
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'aquamarine' }}>
       <div style={{ textAlign: 'center' }}>
         <h1>Server Side Rendering</h1>
         <Link href="/about">
